@@ -1,6 +1,6 @@
 import css from './TransactionHistory.module.css';
 
-export const TransactionHistory = ({ items }) => {
+export default function TransactionHistory({ items }) {
   return (
     <table className={css.table}>
       <thead>
@@ -23,4 +23,4 @@ export const TransactionHistory = ({ items }) => {
       })}
     </table>
   );
-};
+}
