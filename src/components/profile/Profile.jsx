@@ -1,34 +1,27 @@
-export const Profile = ({
-  name,
-  tag,
-  location,
-  image,
-  stats,
-}) => (
-  <div>
-  <div>
-    <img
-      src={image}
-      alt="User avatar"
-    />
-    <p>{name}</p>
-      <p>@{tag}</p>
-      <p>{location}</p>
-  </div>
+import css from './Profile.module.css';
 
-  <ul>
-    <li>
-      <span>Followers</span>
-        <span>{stats.followers}</span>
-    </li>
-    <li>
-      <span>Views</span>
-        <span>{stats.views}</span>
-    </li>
-    <li>
-      <span>Likes</span>
-        <span>{stats.likes}</span>
-    </li>
-  </ul>
-</div>
+export const Profile = ({ name, tag, location, image, stats }) => (
+  <div className={css.container}>
+    <div className={css.avatarBox}>
+      <img className={css.avatar} src={image} alt="User avatar" />
+      <p className={css.name}>{name}</p>
+      <p className={css.text}>@{tag}</p>
+      <p className={css.text}>{location}</p>
+    </div>
+
+    <ul className={css.statsList}>
+      <li className={css.statsItem}>
+        <span className={css.params}>Followers</span>
+        <span className={css.valeu}>{stats.followers}</span>
+      </li>
+      <li className={css.statsItem}>
+        <span className={css.params}>Views</span>
+        <span className={css.valeu}>{stats.views}</span>
+      </li>
+      <li className={css.statsItem}>
+        <span className={css.params}>Likes</span>
+        <span className={css.valeu}>{stats.likes}</span>
+      </li>
+    </ul>
+  </div>
 );
